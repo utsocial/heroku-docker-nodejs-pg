@@ -1,3 +1,16 @@
+# TODO: Test this container in bitbucket:
+# https://hub.docker.com/r/spittet/node-postgresql/
+# https://hub.docker.com/r/nextfaze/node-postgresql-bitbucket-pipelines/
+#  
+# STEPS TO INCLUE ON Dockerfile to INSTALL PG:
+# CREATE FILE :/etc/apt/sources.list.d/pgdg.list
+# ADD THIS LINE:
+# deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main
+apt-get update
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
+apt-get install -y postgresql-9.3 postgresql-client-9.3 postgresql-contrib-9.3
+# Verify the version of posgres available:
+apt-get update && apt-cache search ^postgresql-9
 # Working ok the container in heroku 
 # Fowllow the steps:
 heroku login
